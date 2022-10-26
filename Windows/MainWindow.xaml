@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
+        Title="TravelPal" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
     <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -72,6 +72,7 @@
             Background="#eee"/>
         <Button
             Name="btnSignIn"
+            IsDefault="True"
             Grid.Column="1"
             Grid.Row="3"
             Grid.ColumnSpan="3"
@@ -79,7 +80,8 @@
             Content="Sign in"
             FontSize="25"
             Foreground="MediumSlateBlue"
-            Margin="25,25,0,0" Click="btnSignIn_Click"/>
+            Margin="25,25,0,0" 
+            Click="btnSignIn_Click"/>
         <Button
             Name="btnRegister"
             Grid.Column="1"

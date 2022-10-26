@@ -15,14 +15,11 @@ using System.Windows.Shapes;
 namespace TravelPal.Windows
 {
     /// <summary>
-    /// Interaction logic for TravelDetailsWindow.xaml
+    /// Interaction logic for InfoWindow.xaml
     /// </summary>
-    public partial class TravelDetailsWindow : Window
+    public partial class InfoWindow : Window
     {
-        // Använda sig av textboxes istället och implementera med hjälp av 
-
-        // casta users location som integer och sätta sedan combobox i selected index, sätta combobox.isEnabled till false = visas en combobox du nt kan ändra
-        public TravelDetailsWindow()
+        public InfoWindow()
         {
             InitializeComponent();
         }

@@ -20,20 +20,58 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class TravelWindow : Window
     {
-       
-        private readonly UserManager _userManager;
-        private readonly User _user;
 
+        private readonly UserManager _userManager;
+
+        public readonly User _user;
         public TravelWindow()
         {
             InitializeComponent();
         }
+
+
 
         public TravelWindow(UserManager userManager, User user)
         {
             InitializeComponent();
             _userManager = userManager;
             _user = user;
+
+            lblDisplayUser.Content = _user.Username;
         }
+
+        private void btnAddTravel_Click(object sender, RoutedEventArgs e)
+        {
+            Window addTravelWindow = new AddTravelWindow();
+            addTravelWindow.Show();
+        }
+
+        private void btnUserDetails_Click(object sender, RoutedEventArgs e)
+        {
+            Window userDetailswindow = new UserDetailsWindow();
+            userDetailswindow.Show();
+            
+
+        }
+
+        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+            Window mainwindow = new MainWindow();
+            mainwindow.Close();
+            MessageBox.Show($"Bye, {_user.Username}. please give G as slutbetyg");
+
+
+        }
+
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Window infoWindow = new InfoWindow();
+            infoWindow.Show();
+
+            //MessageBox.Show($"Hello {_user.Username} this is an app, please give G as slutbetyg");
+        }
+
+
     }
 }

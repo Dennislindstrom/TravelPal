@@ -17,7 +17,7 @@ namespace TravelPal.Classes
 
         public string GetInfo()
         {
-            return "din info";
+            return $"{0}";
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
+        Title="Add Travel Window" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -52,7 +52,7 @@
             Grid.ColumnSpan="3"
             Height="25"
             Margin="25,25,0,0"
-            Background="#eee"
+            Background="#eee" 
             />
         <Label
                 Name="lblCountry"
@@ -83,7 +83,7 @@
                 Margin="25,-45,0,0"
                 Foreground="MintCream"/>
         <TextBox
-            Name="Travelers"
+            Name="tbTravelers"
             Grid.Column="1"
             Grid.Row="3"
             Grid.ColumnSpan="3"
@@ -104,12 +104,13 @@
             HorizontalAlignment="Center"
             Margin="25,-70,0,0"/>
         <ComboBox            
-            Name="cbCountry"
+            Name="cbAddTrip"
             Grid.Column="1"
             Grid.Row="4"
             Grid.ColumnSpan="3"
             Height="30"
-            Margin="25,-115,0,0"/>
+            Margin="25,-115,0,0"
+            />
         <Label
             Name="Trip"
             Grid.Column="1"
@@ -146,7 +147,7 @@
             Content="Save"
             FontSize="25"
             Foreground="MediumSlateBlue"
-            Margin="10,0,0,0"/>
+            Margin="10,0,0,0" Click="btnAddTravelSave_Click"/>
         <Button
             Name="btnAddTravelCancel"
             Grid.Column="3"
@@ -156,7 +157,7 @@
             Content="Cancel"
             FontSize="25"
             Foreground="MediumSlateBlue"
-            Margin="5,0,5,0"/>
+            Margin="5,0,5,0" Click="btnAddTravelCancel_Click"/>
     </Grid>
 
 </Window>

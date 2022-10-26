@@ -25,7 +25,8 @@ namespace TravelPal.Windows
     public partial class RegisterWindow : Window
     {
         private readonly UserManager _userManager;
-
+        
+        // Öppna window för att kunna registrera sig och displaya land
         public RegisterWindow(UserManager userManager)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace TravelPal.Windows
             cbCountries.SelectedIndex = 0;
         }
 
+        // Registreringsknapp för att kunna registrera user 
         private void btnRegisterUser_Click(object sender, RoutedEventArgs e)
         {
             string username = tbRegisterUserName.Text;
@@ -46,6 +48,7 @@ namespace TravelPal.Windows
             MessageBox.Show("Your user has been added", "hest");
             Close();
 
+        }
     }
 }
-}
+

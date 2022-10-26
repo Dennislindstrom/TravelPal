@@ -29,13 +29,15 @@ namespace TravelPal
         {
             InitializeComponent();
         }
-
+        
+        //Knapp som öppnar registerWindow
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Window registerWindow = new RegisterWindow(_userManager);
             registerWindow.Show();
+            
         }
-
+        // Knapp för att signa in user 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -62,13 +64,14 @@ namespace TravelPal
                 }
             }
 
+            // Meddelande om user skriver något inkorrekt
             if (!isFoundUser)
             {
                 MessageBox.Show("Username or password is incorrect", "Kurwa... Co robisz?? ");
             }
-            
-            
-            
+
         }
+
+
     }
 }
