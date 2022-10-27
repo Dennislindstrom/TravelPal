@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal.Windows"
         mc:Ignorable="d"
-        Title="Info Window" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
+        Title="Info Window" Height="550" Width="400" Background="MediumSlateBlue" Margin="5" Icon="hest1.jpg">
     
     
     

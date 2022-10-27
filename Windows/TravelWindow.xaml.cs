@@ -72,6 +72,10 @@ namespace TravelPal.Windows
             //MessageBox.Show($"Hello {_user.Username} this is an app, please give G as slutbetyg");
         }
 
-
+        private void btnTravelDetails_Click(object sender, RoutedEventArgs e)
+        {
+            Window travelDetailsWindow = new TravelDetailsWindow();
+            travelDetailsWindow.Show();
+        }
     }
 }

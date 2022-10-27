@@ -9,10 +9,17 @@
 
   <ItemGroup>
     <None Remove="Picture\hest.jpg" />
+    <None Remove="Picture\hest1.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Picture\hest.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Picture\hest1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
   </ItemGroup>
 
 </Project>

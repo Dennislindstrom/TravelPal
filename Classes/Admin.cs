@@ -14,6 +14,11 @@ namespace TravelPal.Classes
         public string Password { get; set; } 
         public Countries Location { get;set; }
 
+        //public void AddAdminUser()
+        //{
+        //    Admin admin = new("admin", "password");
 
+        //    users.Add(admin);
+        //}
     }
 }
