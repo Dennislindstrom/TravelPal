@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Classes;
+using TravelPal.Enums;
 using TravelPal.Interface;
 
 namespace TravelPal.Windows
@@ -21,17 +22,19 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class TravelDetailsWindow : Window
     {
-        
+        public readonly User _user;
         // Använda sig av textboxes istället och implementera med hjälp av 
 
         // casta users location som integer och sätta sedan combobox i selected index, sätta combobox.isEnabled till false = visas en combobox du nt kan ändra
-        public TravelDetailsWindow()
+        public TravelDetailsWindow(User user)
         {
             InitializeComponent();
+            _user = user;
 
+            // Får inte det att fungera, nullvärde?? 
+            lblTravelDestination.Content = _user.Username;
+            lblTravelCountry.Content = tbTravelDestination.Text;
 
-
-            //lblDisplayUser.Content = _user.Username;
         }
 
         private void btnTravelBack_Click(object sender, RoutedEventArgs e)

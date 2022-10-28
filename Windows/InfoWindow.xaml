@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal.Windows"
         mc:Ignorable="d"
-        Title="Info Window" Height="550" Width="400" Background="MediumSlateBlue" Margin="5" Icon="hest1.jpg">
+        Title="Info Window" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
     
     
     
@@ -42,13 +42,23 @@
             Foreground="MintCream">
             Hello, welcome to this new app! You can add different travels to enjoy some trips around the world!
         </TextBlock>
-        <Image
-            Source="C:\Users\Denni\Desktop\Visual studio\Projekt\TravelPal\TravelPal\Picture\hest.jpg"
+        <MediaElement
+            Source="C:\Users\Denni\Desktop\Visual studio\Projekt\TravelPal\TravelPal\Picture\Video.mp4"
             Margin="0,-100,0,0">
           
-        </Image>
-        
-        
+        </MediaElement>
+
+        <Button
+            Name="btnBack"
+            Margin="100,70,-100,0"
+            Height="35"
+            Width="150" 
+            Content="Back"
+            FontSize="20"
+            Foreground="MediumSlateBlue"
+            Click="btnBack_Click"
+            />
+
 
     </StackPanel>
 </Window>

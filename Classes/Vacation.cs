@@ -16,9 +16,9 @@ namespace TravelPal.Classes
             AllInclusive = allInclusive;
         }
 
-        public string GetInfo()
-        {
-            return "dininfo";
-        }
+        //public string GetInfo()
+        //{
+        //    return "dininfo";
+        //}
     }
 }

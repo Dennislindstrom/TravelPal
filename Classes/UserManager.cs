@@ -27,7 +27,8 @@ namespace TravelPal.Classes
                 {
                     Username = username,
                     Password = password,
-                    Location = country
+                    Location = country,
+                    Travels = new()
                 };
 
                 Users.Add(newUser);

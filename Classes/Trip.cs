@@ -15,9 +15,9 @@ namespace TravelPal.Classes
             TripType = tripType;
         }
 
-        public string GetInfo()
-        {
-            return $"{0}";
-        }
+        //public string  GetInfo()
+        //{
+        //    return $"";
+        //}
     }
 }

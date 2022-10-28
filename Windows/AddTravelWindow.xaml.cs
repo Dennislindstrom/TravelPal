@@ -22,11 +22,15 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class AddTravelWindow : Window
     {
-        // Öppna fönstret och displaya val av resor 
-        public AddTravelWindow()
+
+        private readonly User _user;
+        private readonly TravelWindow _travelWindow;
+
+        public AddTravelWindow(User user, TravelWindow travelWindow)
         {
             InitializeComponent();
-
+            _user = user;
+            _travelWindow = travelWindow;
             cbAddCountry.ItemsSource = Enum.GetValues(typeof(Countries));
             cbAddCountry.SelectedIndex = 0;
 
@@ -44,16 +48,23 @@ namespace TravelPal.Windows
         private void btnAddTravelSave_Click(object sender, RoutedEventArgs e)
         {
             string destination = tbDestination.Text;
-            string country = cbAddCountry.Text;
-            int travelers = Convert.ToInt32(tbTravelers.Text);
+            Countries country = (Countries)cbAddCountry.SelectedIndex;
+            
 
             try
             {
-                Convert.ToInt32(tbTravelers.Text);
+                int travelers = int.Parse(tbTravelers.Text);
+
+                Travel travel = new Travel(destination, country, travelers);
+                _user.Travels.Add(travel);
+                _travelWindow.DisplayTravels();
+                Close();
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kurwa siffror!", "REFERENSNAMBER");
+                MessageBox.Show(ex.StackTrace);
+
             }
         }
     }
