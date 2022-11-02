@@ -34,8 +34,13 @@ namespace TravelPal.Windows
             cbAddCountry.ItemsSource = Enum.GetValues(typeof(Countries));
             cbAddCountry.SelectedIndex = 0;
 
-            cbAddTrip.ItemsSource = Enum.GetValues(typeof(TripTypes));
-            cbAddTrip.SelectedIndex = 0;
+
+            cbAddTripType.ItemsSource = Enum.GetValues(typeof(TripTypes));
+            cbAddTripType.Visibility = Visibility.Hidden;
+            lblTripType.Visibility = Visibility.Hidden;
+
+            cbAddTravel.SelectedIndex = 0;
+
 
 
         }
@@ -50,22 +55,54 @@ namespace TravelPal.Windows
             string destination = tbDestination.Text;
             Countries country = (Countries)cbAddCountry.SelectedIndex;
             
-
             try
             {
-                int travelers = int.Parse(tbTravelers.Text);
 
-                Travel travel = new Travel(destination, country, travelers);
-                _user.Travels.Add(travel);
-                _travelWindow.DisplayTravels();
-                Close();
+                if (cbAddTravel.SelectedIndex == 0) //Om selected index är Vacation
+                {
+                    bool allInclusive = (bool)chkBoxAllIncl.IsChecked;
+                    int travelers = int.Parse(tbTravelers.Text);
+                    
+                    Vacation travel = new Vacation(allInclusive, destination, country, travelers);
+                    _user.Travels.Add(travel);
+                    _travelWindow.DisplayTravels();
+                    Close();
+                } 
+                else
+                {
+                    TripTypes tripType = (TripTypes)cbAddTripType.SelectedIndex;
+                    int travelers = int.Parse(tbTravelers.Text);
+
+                    Trip travel = new Trip(tripType, destination, country, travelers);
+                    _user.Travels.Add(travel);
+                    _travelWindow.DisplayTravels();
+                    Close();
+                }
+                
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
-
             }
+
+        }
+
+        private void cbAddTravel_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbAddTravel.SelectedIndex == 1)
+            {
+                chkBoxAllIncl.Visibility = Visibility.Hidden;
+                lblTripType.Visibility = Visibility.Visible;
+                cbAddTripType.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                chkBoxAllIncl.Visibility = Visibility.Visible;
+                lblTripType.Visibility = Visibility.Hidden;
+                cbAddTripType.Visibility = Visibility.Hidden;
+            }
+
         }
     }
 }

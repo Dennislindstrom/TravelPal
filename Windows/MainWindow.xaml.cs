@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TravelPal.Classes;
+using TravelPal.Interface;
 using TravelPal.Windows;
 
 namespace TravelPal
@@ -46,20 +47,26 @@ namespace TravelPal
 
             bool isFoundUser = false;
 
-            foreach (User user in _userManager.Users)
+            foreach (IUser user in _userManager.Users)
             {
                 if (user.Username == username && user.Password == password)
                 {
                     isFoundUser = true;
 
-                    if (user is User)
+                    if (user.GetType() == typeof(User))
                     {
-                        Window travelWindow = new TravelWindow(_userManager, user);
+                        Window travelWindow = new TravelWindow(_userManager, user, this);
                         travelWindow.Show();
+                        Hide();
+                        break;
                     }
-                    else if (user is Admin)
+                    else if (user.GetType() == typeof(Admin))
                     {
-                        Window travelwindow = new TravelWindow(_userManager, user);
+                        Window travelWindow = new TravelWindow(_userManager, user, this);
+                        travelWindow.Show();
+                        Hide();
+                        break;
+                        
                     }
                 }
             }
@@ -67,7 +74,7 @@ namespace TravelPal
             // Meddelande om user skriver något inkorrekt
             if (!isFoundUser)
             {
-                MessageBox.Show("Username or password is incorrect", "Kurwa... Co robisz?? ");
+                MessageBox.Show("Username or password is incorrect", "Warning");
             }
 
         }

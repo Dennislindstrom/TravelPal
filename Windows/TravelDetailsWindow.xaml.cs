@@ -22,18 +22,31 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class TravelDetailsWindow : Window
     {
-        public readonly User _user;
         // Använda sig av textboxes istället och implementera med hjälp av 
 
         // casta users location som integer och sätta sedan combobox i selected index, sätta combobox.isEnabled till false = visas en combobox du nt kan ändra
-        public TravelDetailsWindow(User user)
+        public TravelDetailsWindow(Vacation vacation)
         {
             InitializeComponent();
-            _user = user;
+            lblTripType.Visibility = Visibility.Hidden;
+            tbTripType.Visibility = Visibility.Hidden;
+            tbTravelDestination.Text = vacation.Destination;
+            tbTravelCountry.Text = vacation.Country.ToString();
+            tbTravelTravelers.Text = vacation.Travellers.ToString();
+            tbTrip.Text = "Vacation";
+            checkboxAllInclusive.IsChecked = vacation.AllInclusive;
 
-            // Får inte det att fungera, nullvärde?? 
-            lblTravelDestination.Content = _user.Username;
-            lblTravelCountry.Content = tbTravelDestination.Text;
+        }
+
+        public TravelDetailsWindow(Trip trip)
+        {
+            InitializeComponent();
+            checkboxAllInclusive.Visibility = Visibility.Hidden;
+            tbTravelDestination.Text = trip.Destination;
+            tbTravelCountry.Text = trip.Country.ToString();
+            tbTravelTravelers.Text = trip.Travellers.ToString();
+            tbTrip.Text = "Trip";
+            tbTripType.Text = trip.TripType.ToString();
 
         }
 

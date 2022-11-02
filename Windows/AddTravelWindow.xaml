@@ -90,14 +90,14 @@
             Height="25"
             Margin="25,-70,0,0"
             Background="#eee"/>
-<!--lägg till Add trip i trip
+        <!--lägg till Add trip i trip
     -->
         <Label
             Name="lblTravels"
             Grid.Column="1"
             Grid.Row="4"
             Grid.ColumnSpan="3"
-            Content="Trip"
+            Content="Travel"
             Height="40"
             FontSize="25"
             Foreground="MintCream"
@@ -105,19 +105,27 @@
             HorizontalAlignment="Center"
             Margin="25,-70,0,0"/>
         <ComboBox            
-            Name="cbAddTrip"
+            Name="cbAddTravel"
+            DropDownClosed="cbAddTravel_DropDownClosed"
             Grid.Column="1"
             Grid.Row="4"
             Grid.ColumnSpan="3"
             Height="30"
-            Margin="25,-115,0,0"
-            />
+            Margin="25,-115,0,0">
+            <ComboBoxItem>
+                Vacation
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Trip
+            </ComboBoxItem>
+        </ComboBox>
+
         <Label
-            Name="Trip"
+            Name="lblTripType"
             Grid.Column="1"
             Grid.Row="5"
             Grid.ColumnSpan="3"
-            Content="Trip Type"
+            Content="Trip type"
             Height="40"
             FontSize="25"
             Foreground="MintCream"
@@ -125,19 +133,22 @@
             HorizontalAlignment="Center"
             Margin="25,-85,0,0"/>
         <ComboBox            
-            Name="cbCountdry"
+            Name="cbAddTripType"
             Grid.Column="1"
             Grid.Row="4"
             Grid.ColumnSpan="3"
             Height="30"
             Margin="25,20,0,0"/>
         <CheckBox
-            Grid.Column="1"
-            Grid.Row="5"
+            Name="chkBoxAllIncl"
+            Grid.Column="4"
+            Grid.Row="4"
+            
             Grid.ColumnSpan="3"
             FontSize="15"
             Content="All inclusive"
-            Foreground="MintCream"/>
+            Foreground="MintCream"
+            Margin="5,-25,0,0"/>
 
         <Button
             Name="btnAddTravelSave"

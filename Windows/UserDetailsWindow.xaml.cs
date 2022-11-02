@@ -22,11 +22,17 @@ namespace TravelPal.Windows
     public partial class UserDetailsWindow : Window
     {
         private readonly UserManager _userManager;
-        public UserDetailsWindow()
+        private readonly User _user;
+        private readonly TravelWindow _travelWindow;
+        public UserDetailsWindow(UserManager userManager, User user, TravelWindow travelWindow)
         {
             InitializeComponent();
+            _userManager = userManager;
+            _user = user;
+            _travelWindow = travelWindow;
             cbSettingCountry.ItemsSource = Enum.GetValues(typeof(Countries));
-            cbSettingCountry.SelectedIndex = 0;
+            cbSettingCountry.SelectedIndex = (int)user.Location;
+            tbUserSettingsUserName.Text = user.Username;
 
         }
 
@@ -41,13 +47,37 @@ namespace TravelPal.Windows
             string password = pbSettingsPassword.Password;
             Countries country = (Countries)cbSettingCountry.SelectedIndex;
 
+            if (string.IsNullOrEmpty(tbUserSettingsUserName.Text))
+            {
+                MessageBox.Show("Username cannot be empty", "Warning");
+                return;
 
-            _userManager.addUser(username, password, country);
+            }
+
+            if (username == _user.Username)
+            {
+                MessageBox.Show("You cant change to the same username", "Warning");
+                return;
+            }
+
+            if (_userManager.Users.Any(x => x.Username == username))
+            {
+                MessageBox.Show("That username already exists, pick another one. ");
+                return;
+            }
+            if (pbSettingsConfirmPassword.Password != pbSettingsPassword.Password)
+            {
+                MessageBox.Show("The passwords do not match");
+                return;
+            }
+
+            _userManager.UpdateUserName(_user, username);
+            _userManager.UpdatePassword(_user, password);
+            _userManager.UpdateCountry(_user, country);
+            _travelWindow.UpdateGUI();
 
             MessageBox.Show("Settings has been changed", "Settings");
             Close();
-
-            
         }
     }
 }

@@ -42,10 +42,15 @@ namespace TravelPal.Windows
             string password = pbRegisterPassword.Password;
             Countries country = (Countries)cbCountries.SelectedIndex;
 
+            if (tbRegisterUserName.Text == "" || pbRegisterPassword.Password == "")
+            {
+                MessageBox.Show("You cannot have empty fields", "Error");
+                return;
+            }
 
             _userManager.addUser(username, password, country);
 
-            MessageBox.Show("Your user has been added", "hest");
+            MessageBox.Show("User has been added", "Window ");
             Close();
 
         }

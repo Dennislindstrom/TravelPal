@@ -45,7 +45,7 @@
                 HorizontalAlignment="Center"
                 Margin="25,0,0,0"
                 Foreground="MintCream"/>
-        <TextBox
+        <TextBlock
             Name="tbTravelDestination"
             Grid.Column="1"
             Grid.Row="1"
@@ -64,8 +64,8 @@
                 HorizontalAlignment="Center"
                 Margin="25,-20,0,0"
                 Foreground="MintCream"/>
-        <TextBox
-            Name="cbTravelCountry"
+        <TextBlock
+            Name="tbTravelCountry"
             Grid.Column="1"
             Grid.Row="2"
             Grid.ColumnSpan="3"
@@ -82,7 +82,7 @@
                 HorizontalAlignment="Center"
                 Margin="25,-45,0,0"
                 Foreground="MintCream"/>
-        <TextBox
+        <TextBlock
             Name="tbTravelTravelers"
             Grid.Column="1"
             Grid.Row="3"
@@ -103,13 +103,14 @@
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Margin="25,-70,0,0"/>
-        <TextBox            
+        <TextBlock         
             Name="tbTrip"
             Grid.Column="1"
             Grid.Row="4"
             Grid.ColumnSpan="3"
             Height="30"
-            Margin="25,-115,0,0"/>
+            Margin="25,-115,0,0"
+            Background="#eee"/>
         <Label
             Name="lblTripType"
             Grid.Column="1"
@@ -122,13 +123,14 @@
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Margin="25,-85,0,0"/>
-        <TextBox            
-            Name="cbTripType"
+        <TextBlock            
+            Name="tbTripType"
             Grid.Column="1"
             Grid.Row="4"
             Grid.ColumnSpan="3"
             Height="30"
-            Margin="25,20,0,0"/>
+            Margin="25,20,0,0"
+            Background="#eee"/>
         <CheckBox
             Name="checkboxAllInclusive"
             Grid.Column="1"
@@ -136,7 +138,9 @@
             Grid.ColumnSpan="3"
             FontSize="15"
             Content="All inclusive"
-            Foreground="MintCream"/>
+            Foreground="MintCream"
+            IsEnabled="False"
+/>
         <Button
             Name="btnTravelBack"
             Grid.Column="3"

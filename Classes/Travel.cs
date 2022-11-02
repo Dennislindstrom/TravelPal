@@ -8,11 +8,12 @@ using TravelPal.Enums;
 
 namespace TravelPal.Classes
 {
-    public class Travel : User
+    public class Travel
     {
         public string Destination { get; set; }
         public Countries Country { get; set; } 
         public int Travellers { get; set; }
+
 
         public Travel(string destination, Countries country, int travellers)
         {
@@ -23,7 +24,7 @@ namespace TravelPal.Classes
 
         public string GetInfo()
         {
-            return $"{Username}";
+            return $"{Destination}";
         }
     }
 }

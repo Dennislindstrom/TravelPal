@@ -17,6 +17,8 @@ namespace TravelPal.Classes
         public UserManager()
         {
             Users = new List<IUser>();
+            addUser("Gandalf", "password", Countries.Sweden);
+            AddAdminUser();
         }
 
         public bool addUser(string username, string password, Countries country)
@@ -37,6 +39,16 @@ namespace TravelPal.Classes
             }
             return false;
         }
+                                                                    // Lägga till admin
+        public void AddAdminUser()
+        {
+            Admin admin = new();
+
+            admin.Username = "admin";
+            admin.Password = "password";
+
+            Users.Add(admin);
+        }
 
         public bool removeUser(User user)
         {
@@ -52,16 +64,53 @@ namespace TravelPal.Classes
 
         public bool UpdateUserName(User user, string updatedUserName)
         {
+            user.Username = updatedUserName;
             return true;
         }
 
         private bool ValidateUsername(string username)
         {
-            return true;
+            bool usernameIsValid = true;
+
+            if (string.IsNullOrEmpty(username) || Users.Any(x => x.Username == username))
+                usernameIsValid = false;
+
+            return usernameIsValid;
         }
 
         public bool SignInUser(string username, string password)
         {
+            return true;
+        }
+
+        public bool UpdatePassword(User user, string updatedPassword)
+        {
+            user.Password = updatedPassword;
+            return true;
+        }
+
+        public bool UpdateCountry(User user, Countries country)
+        {
+            user.Location = country;
+            return true;
+        }
+
+        public bool AdminRemoveTravel(int index, string userName)
+        {
+            List<Travel> travelList = new();
+
+            foreach (User user in Users.Where(x => x.GetType() == typeof(User)).ToList())
+            {
+                foreach(Travel travel in user.Travels)
+                    travelList.Add(travel);
+            }
+
+            Travel travelToRemove = travelList.ElementAt(index);
+
+            User userWithTravelToDelete = (User)Users.FirstOrDefault(x => x.Username == userName);
+
+            userWithTravelToDelete.Travels.Remove(travelToRemove);
+
             return true;
         }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal.Windows"
         mc:Ignorable="d"
-       Title="MainWindow" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
+       Title="MainWindow" Height="550" Width="600" Background="MediumSlateBlue" Margin="5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,11 +25,12 @@
 
         <Label
             Name="lbHeaderTravel"
-            Grid.Column="1"
+            Grid.Column="0"
             Grid.Row="0"
             Grid.ColumnSpan="3"
             Content="Travels"
             FontSize="40"
+            Margin="5"
             FontWeight="Bold"
             Foreground="MintCream"
             />
@@ -48,55 +49,56 @@
             Name="lvTravels"
             Grid.Column="0"
             Grid.Row="1"
-            Grid.ColumnSpan="4"
+            Grid.ColumnSpan="5"
+            Width="400"
             Grid.RowSpan="3"
-            Margin="5,0,40,0"/>
+            FontSize="15"
+            Margin="-35,0,40,0"/>
         <Button
             Name="btnAddTravel"
-            Grid.Column="2"
+            Grid.Column="4"
             Grid.Row="1"
             Grid.ColumnSpan="5"
             Height="40"
-            Width="150"
+            Width="130"
             Content="Add Travel"
-            FontSize="25"
+            FontSize="21"
             Foreground="MediumSlateBlue"
-            Margin="85,0,0,0" 
             Click="btnAddTravel_Click"/>
         <Button
            Name="btnRemove"
-            Grid.Column="2"
+            Grid.Column="4"
             Grid.Row="2"
             Grid.ColumnSpan="5"
             Height="40"
-            Width="150"
+            Width="130"
             Content="Remove"
-            FontSize="25"
+            FontSize="21"
             Foreground="MediumSlateBlue"
-            Margin="85,-60,0,0"/>
+            Margin="0,-60,0,0" 
+            Click="btnRemove_Click"/>
         <Button
             Name="btnUserDetails"
-            Grid.Column="2"
+            Grid.Column="4"
             Grid.Row="2"
             Grid.ColumnSpan="5"
             Height="40"
-            Width="150"
+            Width="130"
             Content="User details"
-            FontSize="25"
+            FontSize="21"
             Foreground="MediumSlateBlue"
-            Margin="85,70,0,0" 
+            Margin="0,70,0,0" 
             Click="btnUserDetails_Click"/>
         <Button
             Name="btnTravelDetails"
-            Grid.Column="2"
+            Grid.Column="4"
             Grid.Row="3"
             Grid.ColumnSpan="5"
             Height="40"
-            Width="150"
+            Width="130"
             Content="Travel details"
-            FontSize="25"
+            FontSize="21"
             Foreground="MediumSlateBlue"
-            Margin="85,0,0,0" 
             Click="btnTravelDetails_Click"
             />
         <Button
@@ -108,7 +110,7 @@
             Width="125"
             Content="Info"
             HorizontalAlignment="Left"
-            FontSize="25"
+            FontSize="21"
             Foreground="MediumSlateBlue"
             Margin="5,0,0,0" 
             Click="btnInfo_Click"/>
@@ -128,15 +130,15 @@
             />
         <Button
             Name="btnSignOut"
-            Grid.Column="2"
+            Grid.Column="4"
             Grid.Row="4"
             Grid.ColumnSpan="4"
             Height="40"
             Width="125"
             Content="Sign out"
             HorizontalAlignment="Left"
-            FontSize="25"
+            FontSize="21"
             Foreground="MediumSlateBlue"
-            Margin="140,0,5,0" Click="btnSignOut_Click"/>
+            Margin="10,0,5,0" Click="btnSignOut_Click"/>
     </Grid>
 </Window>

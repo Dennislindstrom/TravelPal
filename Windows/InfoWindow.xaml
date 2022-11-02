@@ -39,8 +39,9 @@
             TextWrapping="Wrap"
             FontSize="15"
             Height="200"
+            Width="365"
             Foreground="MintCream">
-            Hello, welcome to this new app! You can add different travels to enjoy some trips around the world!
+            Hello, welcome to this new app! You can add different travels to enjoy some trips around the world! Here is a video from one of our clients when he was in Narnia
         </TextBlock>
         <MediaElement
             Source="C:\Users\Denni\Desktop\Visual studio\Projekt\TravelPal\TravelPal\Picture\Video.mp4"

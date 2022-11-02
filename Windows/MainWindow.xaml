@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="TravelPal" Height="550" Width="400" Background="MediumSlateBlue" Margin="5">
+        Title="TravelPal" 
+        Height="550" Width="400" Background="MediumSlateBlue"
+        Margin="5">
     <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
