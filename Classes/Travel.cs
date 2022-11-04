@@ -14,17 +14,12 @@ namespace TravelPal.Classes
         public Countries Country { get; set; } 
         public int Travellers { get; set; }
 
-
+        
         public Travel(string destination, Countries country, int travellers)
         {
             Destination = destination;
             Country = country;
             Travellers = travellers;
-        }
-
-        public string GetInfo()
-        {
-            return $"{Destination}";
         }
     }
 }

@@ -19,11 +19,12 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class InfoWindow : Window
     {
+        // Info ruta som dyker upp med roligt filmklipp 
         public InfoWindow()
         {
             InitializeComponent();
         }
-
+        // knapp som får användaren att ta bort fönstret när man trycker på "back"
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Close();

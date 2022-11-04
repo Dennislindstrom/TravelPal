@@ -90,8 +90,6 @@
             Height="25"
             Margin="25,-70,0,0"
             Background="#eee"/>
-        <!--lägg till Add trip i trip
-    -->
         <Label
             Name="lblTravels"
             Grid.Column="1"

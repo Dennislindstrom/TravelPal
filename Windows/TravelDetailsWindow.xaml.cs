@@ -22,9 +22,6 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class TravelDetailsWindow : Window
     {
-        // Använda sig av textboxes istället och implementera med hjälp av 
-
-        // casta users location som integer och sätta sedan combobox i selected index, sätta combobox.isEnabled till false = visas en combobox du nt kan ändra
         public TravelDetailsWindow(Vacation vacation)
         {
             InitializeComponent();
@@ -37,7 +34,7 @@ namespace TravelPal.Windows
             checkboxAllInclusive.IsChecked = vacation.AllInclusive;
 
         }
-
+        // Visar comboboxen om man trycker på vacation eller trip
         public TravelDetailsWindow(Trip trip)
         {
             InitializeComponent();
@@ -49,7 +46,7 @@ namespace TravelPal.Windows
             tbTripType.Text = trip.TripType.ToString();
 
         }
-
+        // Knapp som tar användaren tillbaka till fd fönstret
         private void btnTravelBack_Click(object sender, RoutedEventArgs e)
         {
             Close();

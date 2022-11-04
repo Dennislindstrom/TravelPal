@@ -17,10 +17,23 @@ namespace TravelPal.Classes
         public UserManager()
         {
             Users = new List<IUser>();
-            addUser("Gandalf", "password", Countries.Sweden);
+            Users.Add(
+                new User
+                {
+                    Username = "Gandalf",
+                    Password = "password",
+                    Location = Countries.Bosnia_and_Herzegovina,
+                    Travels = new List<Travel>()
+                    {
+                        new Trip(TripTypes.Work, "Borås", Countries.Bangladesh, 1 ),
+                        new Vacation(false, "Kandahar", Countries.Sweden, 5)
+                    }
+                });
+            
+            
             AddAdminUser();
         }
-
+        // Kunna tillägga en användare
         public bool addUser(string username, string password, Countries country)
         {
             if (ValidateUsername(username))
@@ -39,7 +52,7 @@ namespace TravelPal.Classes
             }
             return false;
         }
-                                                                    // Lägga till admin
+        // Kunna skapa en admin
         public void AddAdminUser()
         {
             Admin admin = new();
@@ -49,7 +62,7 @@ namespace TravelPal.Classes
 
             Users.Add(admin);
         }
-
+        // Ta bort en användare
         public bool removeUser(User user)
         {
             if (Users.Any(x => x.Username == user.Username))
@@ -61,13 +74,13 @@ namespace TravelPal.Classes
 
             return false;
         }
-
+        // Uppdatera användarens namn
         public bool UpdateUserName(User user, string updatedUserName)
         {
             user.Username = updatedUserName;
             return true;
         }
-
+        // Validera användaren 
         private bool ValidateUsername(string username)
         {
             bool usernameIsValid = true;
@@ -77,24 +90,24 @@ namespace TravelPal.Classes
 
             return usernameIsValid;
         }
-
+        // Signa in en användare
         public bool SignInUser(string username, string password)
         {
             return true;
         }
-
+        // Uppdatera lösenord
         public bool UpdatePassword(User user, string updatedPassword)
         {
             user.Password = updatedPassword;
             return true;
         }
-
+        // Uppdatera landet
         public bool UpdateCountry(User user, Countries country)
         {
             user.Location = country;
             return true;
         }
-
+        // Admin kan radera användarens travel
         public bool AdminRemoveTravel(int index, string userName)
         {
             List<Travel> travelList = new();

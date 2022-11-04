@@ -58,7 +58,7 @@ namespace TravelPal.Windows
             try
             {
 
-                if (cbAddTravel.SelectedIndex == 0) //Om selected index är Vacation
+                if (cbAddTravel.SelectedIndex == 0)
                 {
                     bool allInclusive = (bool)chkBoxAllIncl.IsChecked;
                     int travelers = int.Parse(tbTravelers.Text);
@@ -83,11 +83,12 @@ namespace TravelPal.Windows
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("Please type a number instead");
             }
 
         }
-
+        // Väljer användaren Vacation så kommer en checkbox som användaren kan markera ifall all inclusive ska finnas
+        // Väljer användaren Trip kommer en combobox med Trip type som leisure eller work 
         private void cbAddTravel_DropDownClosed(object sender, EventArgs e)
         {
             if (cbAddTravel.SelectedIndex == 1)

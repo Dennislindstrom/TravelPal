@@ -23,7 +23,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         <Label
                 Name="lblRegister"
                 Grid.Column="1"
@@ -49,7 +48,7 @@
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Height="25"
-            Margin="25,50,0,0"
+            Margin="25,30,0,0"
             Background="#eee"
             />
         <Label
@@ -60,7 +59,7 @@
                 Content="Password"
                 FontSize="25"
                 HorizontalAlignment="Center"
-                Margin="25,0,0,0"
+                Margin="25,-20,0,0"
                 Foreground="MintCream"/>
         <PasswordBox
             Name="pbRegisterPassword"
@@ -68,7 +67,24 @@
             Grid.Row="2"
             Grid.ColumnSpan="3"
             Height="25"
-            Margin="25,50,0,0"
+            Margin="25,-20,0,0"
+            Background="#eee"/>
+        <Label
+                Name="lblconfirmPassword"
+                Grid.Column="1"
+                Grid.Row="3"
+                Grid.ColumnSpan="5"
+                Content="Confirm password"
+                FontSize="25"
+                Margin="5,-45,0,0"
+                Foreground="MintCream"/>
+        <PasswordBox
+            Name="pbConfirmPassword"
+            Grid.Column="1"
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Height="25"
+            Margin="25,-55,0,0"
             Background="#eee"/>
         <Label
             Name="lblCountry"
@@ -81,6 +97,7 @@
             Foreground="MintCream"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
+            Margin="0,20,0,0"
             />
         <ComboBox            
             Name="cbCountries"
@@ -88,7 +105,7 @@
             Grid.Row="3"
             Grid.ColumnSpan="3"
             Height="30"
-            Margin="25,40,0,0"/>
+            Margin="25,60,0,0"/>
         <Button
             Name="btnRegisterUser"
             IsDefault="True"

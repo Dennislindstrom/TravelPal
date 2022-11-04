@@ -47,13 +47,21 @@ namespace TravelPal.Windows
                 MessageBox.Show("You cannot have empty fields", "Error");
                 return;
             }
+            if (pbRegisterPassword.Password != pbConfirmPassword.Password)
+            {
+                MessageBox.Show("The passwords do not match");
+                return;
+            }
 
-            _userManager.addUser(username, password, country);
+                _userManager.addUser(username, password, country);
 
             MessageBox.Show("User has been added", "Window ");
             Close();
 
         }
+
+        
+
     }
 }
 

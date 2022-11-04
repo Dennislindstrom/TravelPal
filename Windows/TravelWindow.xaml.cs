@@ -1,16 +1,8 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TravelPal.Classes;
 using TravelPal.Interface;
 
@@ -63,13 +55,13 @@ namespace TravelPal.Windows
 
             DisplayTravels();
         }
-
+        // Knapp som får användaren att öppna "add" fönstret
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
             Window addTravelWindow = new AddTravelWindow(_user, this);
             addTravelWindow.Show();
         }
-
+        // Knapp som får användaren att se detaljer kring avändaren
         private void btnUserDetails_Click(object sender, RoutedEventArgs e)
         {
             Window userDetailswindow = new UserDetailsWindow(_userManager, _user, this);
@@ -77,7 +69,7 @@ namespace TravelPal.Windows
 
 
         }
-
+        // Knapp som signar ut användaren
         private void btnSignOut_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -87,14 +79,14 @@ namespace TravelPal.Windows
 
 
         }
-
+        // Knapp som ger info om appen och en kund som har filmat ett klipp 
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
             Window infoWindow = new InfoWindow();
             infoWindow.Show();
 
         }
-
+        // Knapp som ger detaljer kring en resa
         private void btnTravelDetails_Click(object sender, RoutedEventArgs e)
         {
             if (lvTravels.SelectedIndex == -1)
@@ -115,6 +107,7 @@ namespace TravelPal.Windows
             }
 
         }
+        // Ger information kring travel i listView
         public void DisplayTravels()
         {
             lvTravels.Items.Clear();
@@ -152,7 +145,7 @@ namespace TravelPal.Windows
                 }
             }
         }
-
+        // Tar bort en travel
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
             lvTravels.Focus();
@@ -163,7 +156,6 @@ namespace TravelPal.Windows
                 lvTravels.SelectedIndex = -1;
                 return;
             }
-
 
             Travel selectedTravel = travels[lvTravels.SelectedIndex];
 
@@ -183,7 +175,7 @@ namespace TravelPal.Windows
 
             UpdateGUI();
         }
-
+        // Uppdaterar användarnamnet 
         public void UpdateGUI()
         {
             if(!_isAdmin)

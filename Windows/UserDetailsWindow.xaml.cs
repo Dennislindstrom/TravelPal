@@ -35,12 +35,12 @@ namespace TravelPal.Windows
             tbUserSettingsUserName.Text = user.Username;
 
         }
-
+        // Knapp som gör att fönstret klickas ner
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
+        // Knapp som sparar användarens information
         private void btnSaveUser_Click(object sender, RoutedEventArgs e)
         {
             string username = tbUserSettingsUserName.Text;
